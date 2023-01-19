@@ -4,9 +4,14 @@ import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, Fi
 import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
 import { BiColorFill } from 'react-icons/bi';
 import { IoMdContacts } from 'react-icons/io';
-import { RiContactsLine, RiDashboard2Fill, RiDashboardLine, RiStockLine } from 'react-icons/ri';
+import {BsChatLeftText} from 'react-icons/bs';
+import {GoChecklist} from 'react-icons/go';
+import {RxDashboard} from 'react-icons/rx';
+import { RiContactsLine, RiStockLine } from 'react-icons/ri';
 import { MdOutlineSupervisorAccount } from 'react-icons/md';
 import { HiOutlineRefresh } from 'react-icons/hi';
+import { FiMail } from 'react-icons/fi';
+import {FaEdit} from 'react-icons/fa';
 import { TiTick } from 'react-icons/ti';
 import { GiLouvrePyramid } from 'react-icons/gi';
 import { GrLocation } from 'react-icons/gr';
@@ -22,17 +27,12 @@ import product5 from './product5.jpg';
 import product6 from './product6.jpg';
 import product7 from './product7.jpg';
 import product8 from './product8.jpg';
- import cart from './cart.svg';
- import dashboard from './dashboard.svg';
- import message from './message.svg';
- import shopping from './shopping.svg';
- import myOrder from './myOrder.svg';
- import inventory from './inventory.svg';
+import pro1 from './pro1.png';
+import pro2 from './pro2.png';
+import pro3 from './pro3.png';
+import pro4 from './pro4.png';
 
-
-
-
-
+import pro5 from './pro5.png';
 
 export const gridOrderImage = (props) => (
   <div>
@@ -482,38 +482,75 @@ export const employeesGrid = [
 
 export const links = [
   {
-    title: 'Dashboard',
+
     links: [
       {
-        image: dashboard,
         name: 'Dashboard',
-
-      },
-    ],
-  },
-
-  {
-
-    links: [
-      {
-        name: 'orders',
-        image: shopping,
+        icon: <RxDashboard />,
       },
       {
-        name: 'inventory',
-        image: inventory,
+        name: 'message',
+        icon: <BsChatLeftText />,
       },
       {
-        name: 'Message',
-        image: message,
+        name: 'Inventory',
+        icon: <GoChecklist />,
       },
       {
-        name: 'my orders',
-        image: myOrder,
+        name: 'order',
+        icon: <AiOutlineShoppingCart />,
+      },
+      {
+        name: 'Myorder',
+        icon: <FiShoppingBag />,
       },
     ],
   },
 ];
+
+export const productList = [
+  {
+    image:
+      pro5,
+    name: 'Grey Goose Vodka',
+    status: 'Available',
+    price: '$250',
+    quantity: '2000',
+  },
+  {
+    image:
+  pro2,
+name: 'Grey Goose Vodka',
+status: 'Available',
+price: '$250',
+quantity: '2000',
+},
+{
+  image:
+pro1,
+name: 'Grey Goose Vodka',
+status: 'Available',
+price: '$250',
+quantity: '2000',
+},
+{
+  image:
+pro3,
+name: 'Grey Goose Vodka',
+status: 'Available',
+price: '$250',
+quantity: '2000',
+},
+{
+  image:
+pro4,
+name: 'Grey Goose Vodka',
+status: 'Available',
+price: '$250',
+quantity: '2000',
+},
+]
+
 
 export const cartData = [
   {
@@ -572,40 +609,32 @@ export const chatData = [
 
 export const earningData = [
   {
-    icon: <MdOutlineSupervisorAccount />,
-    amount: '55',
-    title: 'Pending Orders',
-    iconColor: '#03C9D7',
-    iconBg: 'rgba(237, 251, 237, 1)',
-    pcColor: 'red-600',
-  },
-  {
-    icon: <BsBoxSeam />,
+      icon: <BsBoxSeam />,
+      amount: '55',
+      title: 'Pending Orders',
+      iconColor: '#34A853',
+      iconBg: '#EDFBED',
+      pcColor: 'green-600',
+    },
+    {
+    icon: <FiMail />,
     amount: '12',
     title: 'Unread Messages',
-    iconColor: 'rgb(255, 244, 229)',
+    iconColor: '#9747FF',
     iconBg: '#E8DAFB',
-    pcColor: 'green-600',
+    pcColor: 'red-600',
   },
-  {
-    icon: <FiBarChart />,
-    amount: '16',
 
+  {
+    icon: <FaEdit />,
+    amount: '16',
     title: 'Modified Orders',
-    iconColor: 'rgb(228, 106, 118)',
+    iconColor: '#EF3838',
     iconBg: '#FDE6E6',
 
     pcColor: 'green-600',
   },
-  // {
-  //   icon: <HiOutlineRefresh />,
-  //   amount: '39,354',
-  //   percentage: '-12%',
-  //   title: 'Refunds',
-  //   iconColor: 'rgb(0, 194, 146)',
-  //   iconBg: 'rgb(235, 250, 242)',
-  //   pcColor: 'red-600',
-  // },
+
 ];
 
 export const recentTransactions = [
@@ -777,15 +806,15 @@ export const medicalproBranding = {
 export const themeColors = [
   {
     name: 'blue-theme',
-    color: '#000000',
+    color: '#1A97F5',
   },
   {
     name: 'green-theme',
-    color: '#000000',
+    color: '#03C9D7',
   },
   {
     name: 'purple-theme',
-    color: '#000000',
+    color: '#7352FF',
   },
   {
     name: 'red-theme',

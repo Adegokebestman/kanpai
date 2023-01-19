@@ -7,12 +7,13 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
 import avatar from "../data/avatar.jpg";
-import { Cart, Chat, Notification, UserProfile } from ".";
+import { Cart, Chat, Notification, UserProfile, Settings } from ".";
 import { useStateContext } from "../contexts/ContextProvider";
 import kampai from '../data/kampai.svg';
 import notification from '../data/notification.svg';
  import cart from '../data/cart.svg';
  import settings from '../data/settings.svg';
+import { Order } from "../pages";
 
 
 
@@ -65,9 +66,12 @@ const Navbar = () => {
   const handleActiveMenu = () => setActiveMenu(!activeMenu);
 
   return (
-    <div className="flex p-4">
-    <img src={kampai} alt={kampai} />
-       <form className="max-w-sm pt-4 mr-14 ml-14 px-4">
+    <div className=" flex mt-2 justify-around p-2 md:ml-6 md:mr-6 ">
+
+      <div className="">
+      <img className="" src={kampai} alt={kampai} />
+</div>
+<form className="max-w-sm mr-14 ml-14 px-4 ">
         <div className="relative">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -86,32 +90,31 @@ const Navbar = () => {
           <input
             type="text"
             placeholder="Search"
-            className=" py-3 pl-12 pr-40 text-[#EBAF8D] border rounded-md outline-[#AF501A] bg-white-50 focus:bg-white focus:border-indigo-600"
+            className=" py-3 pl-12 pr-40 text-black border border-[#AF501A] rounded-md outline-[#AF501A] bg-white-50 focus:bg-white focus:border-indigo-600"
           />
         </div>
       </form>
-      {/* <NavButton
+    <NavButton className="inline-block pr-8 pl-8"
         title="Menu"
         customFunc={handleActiveMenu}
         color={currentColor}
         icon={<AiOutlineMenu />}
-      /> */}
-      <div className="flex justify-between p-2 md:ml-32 md:mr-6 relative">
-        {" "}
-        <NavButton
+      />
+
+        <NavButton className="inline-block"
           title="Notification"
           dotColor="rgb(254, 201, 15)"
           customFunc={() => handleClick("notification")}
           color={currentColor}
           icon={<img src={notification} alt={notification} />}
         />
-        <NavButton
+        <NavButton className="inline-block"
           title="Cart"
           customFunc={() => handleClick("cart")}
           color={currentColor}
           icon={<img src={cart} alt={cart} />}
         />
-        <NavButton
+        <NavButton className="inline-block"
           title="Settings"
           dotColor="#03C9D7"
           customFunc={() => handleClick("chat")}
@@ -128,21 +131,22 @@ const Navbar = () => {
               src={avatar}
               alt="user-profile"
             />
-            {/* <p>
+            <p>
               <span className="text-gray-400 text-14">Hi,</span>{" "}
               <span className="text-gray-400 font-bold ml-1 text-14">
                 Michael
               </span>
             </p>
-            <MdKeyboardArrowDown className="text-gray-400 text-14" /> */}
+            <MdKeyboardArrowDown className="text-gray-400 text-14" />
           </div>
         </TooltipComponent>
-        {/* {isClicked.cart && <Cart />}
-        {isClicked.chat && <Chat />}
+        {isClicked.cart && <Order />}
         {isClicked.notification && <Notification />}
-        {isClicked.userProfile && <UserProfile />} */}
+        {isClicked.settings && <Settings />}
+        {isClicked.userProfile && <UserProfile />}
       </div>
-    </div>
+
+
   );
 };
 
